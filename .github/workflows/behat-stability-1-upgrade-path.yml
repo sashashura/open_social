@@ -58,13 +58,13 @@ jobs:
       - name: Install Open Social
         run: docker exec -i social_ci_web bash /var/www/scripts/social/install/install_script.sh
 
-      # Reset the entire branch, so we can checkout goalgorilla/drupal_social:5.3.0
+      # Reset the entire branch, so we can checkout goalgorilla/drupal_social:feature/drupal-9-4
       # and ths way we won't get issues with dev dependencies from 8.x related Open Social versions.
       - name: Prepare repository for upgrade
         run: |
           git stash
           rm -rf vendor/ composer.lock
-          git checkout 5.3.0
+          git checkout feature/drupal-9-4
 
       - name: Composer require current branch and social_search_autocomplete
         run: |
