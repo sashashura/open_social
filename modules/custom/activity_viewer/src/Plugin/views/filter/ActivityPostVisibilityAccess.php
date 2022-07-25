@@ -255,7 +255,7 @@ class ActivityPostVisibilityAccess extends FilterPluginBase {
     // to check what groups user has access.
     $membership_access = new Condition('AND');
     $membership_access->condition('activity__field_activity_entity.field_activity_entity_target_type', 'group_content');
-    $membership_access->condition('group_content.gid', $groups_unique ?: [0], 'IN');
+    $membership_access->condition('group_content.gid', $groups_unique, 'IN');
     $or->condition($membership_access);
 
     // Lets add all the or conditions to the Views query.
