@@ -591,11 +591,6 @@ parameters:
 			path: modules/custom/activity_creator/src/Entity/Activity.php
 
 		-
-			message: "#^Class Drupal\\\\activity_creator\\\\Form\\\\ActivityDeleteForm extends @internal class Drupal\\\\Core\\\\Entity\\\\ContentEntityDeleteForm\\.$#"
-			count: 1
-			path: modules/custom/activity_creator/src/Form/ActivityDeleteForm.php
-
-		-
 			message: "#^Method Drupal\\\\activity_creator\\\\Form\\\\ActivityForm\\:\\:save\\(\\) should return int but return statement is missing\\.$#"
 			count: 1
 			path: modules/custom/activity_creator/src/Form/ActivityForm.php
@@ -1443,6 +1438,11 @@ parameters:
 		-
 			message: "#^Call to an undefined method Drupal\\\\views\\\\Plugin\\\\views\\\\query\\\\QueryPluginBase\\:\\:addWhere\\(\\)\\.$#"
 			count: 1
+			path: modules/custom/activity_viewer/src/Plugin/views/filter/ActivityPostVisibilityAccess.php
+
+		-
+			message: "#^Comparison operation \"\\>\" between int\\<1, max\\> and 0 is always true\\.$#"
+			count: 2
 			path: modules/custom/activity_viewer/src/Plugin/views/filter/ActivityPostVisibilityAccess.php
 
 		-
@@ -2789,11 +2789,6 @@ parameters:
 			message: "#^Parameter \\#2 \\$regex of method Symfony\\\\Component\\\\Routing\\\\Route\\:\\:setRequirement\\(\\) expects string, bool\\|string given\\.$#"
 			count: 1
 			path: modules/custom/social_font/src/FontHtmlRouteProvider.php
-
-		-
-			message: "#^Class Drupal\\\\social_font\\\\Form\\\\FontDeleteForm extends @internal class Drupal\\\\Core\\\\Entity\\\\ContentEntityDeleteForm\\.$#"
-			count: 1
-			path: modules/custom/social_font/src/Form/FontDeleteForm.php
 
 		-
 			message: "#^Method Drupal\\\\social_font\\\\Form\\\\FontForm\\:\\:save\\(\\) should return int but return statement is missing\\.$#"
@@ -4811,11 +4806,6 @@ parameters:
 			path: modules/social_features/social_comment/src/Controller/SocialCommentController.php
 
 		-
-			message: "#^Parameter \\#1 \\$field of method Drupal\\\\entity\\\\QueryAccess\\\\ConditionGroup\\:\\:addCondition\\(\\) expects Drupal\\\\entity\\\\QueryAccess\\\\ConditionGroup\\|string, bool\\|string given\\.$#"
-			count: 1
-			path: modules/social_features/social_comment/src/Entity/Access/CommentQueryAccessHandler.php
-
-		-
 			message: "#^Method Drupal\\\\social_comment\\\\Form\\\\SocialCommentAdminOverview\\:\\:create\\(\\) has no return type specified\\.$#"
 			count: 1
 			path: modules/social_features/social_comment/src/Form/SocialCommentAdminOverview.php
@@ -6411,16 +6401,6 @@ parameters:
 			path: modules/social_features/social_core/src/Service/LayoutService.php
 
 		-
-			message: "#^Cannot access offset 'layout_builder' on array\\|bool\\|float\\|int\\|string\\.$#"
-			count: 1
-			path: modules/social_features/social_core/src/SocialCoreServiceProvider.php
-
-		-
-			message: "#^Cannot access offset 'select2' on array\\|bool\\|float\\|int\\|string\\.$#"
-			count: 1
-			path: modules/social_features/social_core/src/SocialCoreServiceProvider.php
-
-		-
 			message: "#^Method Drupal\\\\social_core\\\\SocialCoreServiceProvider\\:\\:alter\\(\\) has no return type specified\\.$#"
 			count: 1
 			path: modules/social_features/social_core/src/SocialCoreServiceProvider.php
@@ -6489,6 +6469,11 @@ parameters:
 			message: "#^Unsafe access to private constant Drupal\\\\social_embed\\\\Form\\\\EmbedConsentForm\\:\\:SETTINGS through static\\:\\:\\.$#"
 			count: 3
 			path: modules/social_features/social_embed/src/Form/EmbedConsentForm.php
+
+		-
+			message: "#^Part \\$protocols \\(bool\\|float\\|int\\|string\\|UnitEnum\\|null\\) of encapsed string cannot be cast to string\\.$#"
+			count: 1
+			path: modules/social_features/social_embed/src/Plugin/Filter/SocialEmbedConvertUrlToEmbedFilter.php
 
 		-
 			message: "#^Method Drupal\\\\social_embed\\\\SocialEmbedConfigOverride\\:\\:addEditorOverride\\(\\) has no return type specified\\.$#"
@@ -7585,11 +7570,6 @@ parameters:
 			path: modules/social_features/social_event/modules/social_event_managers/social_event_managers.module
 
 		-
-			message: "#^Trying to invoke non\\-empty\\-string but it might not be a callable\\.$#"
-			count: 1
-			path: modules/social_features/social_event/modules/social_event_managers/social_event_managers.module
-
-		-
 			message: "#^Variable \\$display_id might not be defined\\.$#"
 			count: 1
 			path: modules/social_features/social_event/modules/social_event_managers/social_event_managers.module
@@ -7661,11 +7641,6 @@ parameters:
 
 		-
 			message: "#^Method Drupal\\\\social_event_managers\\\\Form\\\\SocialEventManagersAddEnrolleeForm\\:\\:uniqueMembers\\(\\) has parameter \\$form_state with no type specified\\.$#"
-			count: 1
-			path: modules/social_features/social_event/modules/social_event_managers/src/Form/SocialEventManagersAddEnrolleeForm.php
-
-		-
-			message: "#^Parameter \\#1 \\$text of method Drupal\\\\Core\\\\Utility\\\\Token\\:\\:replace\\(\\) expects string, array\\|string given\\.$#"
 			count: 1
 			path: modules/social_features/social_event/modules/social_event_managers/src/Form/SocialEventManagersAddEnrolleeForm.php
 
@@ -8865,11 +8840,6 @@ parameters:
 			path: modules/social_features/social_event/src/Form/EnrollRequestModalForm.php
 
 		-
-			message: "#^Class Drupal\\\\social_event\\\\Form\\\\EventEnrollmentDeleteForm extends @internal class Drupal\\\\Core\\\\Entity\\\\ContentEntityDeleteForm\\.$#"
-			count: 1
-			path: modules/social_features/social_event/src/Form/EventEnrollmentDeleteForm.php
-
-		-
 			message: "#^Method Drupal\\\\social_event\\\\Form\\\\EventEnrollmentForm\\:\\:save\\(\\) should return int but return statement is missing\\.$#"
 			count: 1
 			path: modules/social_features/social_event/src/Form/EventEnrollmentForm.php
@@ -9658,6 +9628,11 @@ parameters:
 			message: "#^Method Drupal\\\\social_group_default_route\\\\RouteSubscriber\\\\RouteSubscriber\\:\\:alterRoutes\\(\\) has no return type specified\\.$#"
 			count: 1
 			path: modules/social_features/social_group/modules/social_group_default_route/src/RouteSubscriber/RouteSubscriber.php
+
+		-
+			message: "#^Method Drupal\\\\social_flexible_group_book\\\\Plugin\\\\ActivityEntityCondition\\\\BookParentOnlyActivityEntityCondition\\:\\:isValidEntityCondition\\(\\) has parameter \\$entity with no type specified\\.$#"
+			count: 1
+			path: modules/social_features/social_group/modules/social_group_flexible_group/modules/social_flexible_group_book/src/Plugin/ActivityEntityCondition/BookParentOnlyActivityEntityCondition.php
 
 		-
 			message: "#^Cannot call method clear\\(\\) on Drupal\\\\search_api\\\\Entity\\\\Index\\|null\\.$#"
@@ -13740,11 +13715,6 @@ parameters:
 			path: modules/social_features/social_post/src/Entity/Post.php
 
 		-
-			message: "#^Class Drupal\\\\social_post\\\\Form\\\\PostDeleteForm extends @internal class Drupal\\\\Core\\\\Entity\\\\ContentEntityDeleteForm\\.$#"
-			count: 1
-			path: modules/social_features/social_post/src/Form/PostDeleteForm.php
-
-		-
 			message: "#^\\\\Drupal calls should be avoided in classes, use dependency injection instead$#"
 			count: 5
 			path: modules/social_features/social_post/src/Form/PostDeleteForm.php
@@ -17633,8 +17603,3 @@ parameters:
 			message: "#^\\\\Drupal calls should be avoided in classes, use dependency injection instead$#"
 			count: 2
 			path: modules/social_features/social_user_export/src/Plugin/Action/ExportUser.php
-
-		-
-			message: "#^Method Drupal\\\\social_flexible_group_book\\\\Plugin\\\\ActivityEntityCondition\\\\BookParentOnlyActivityEntityCondition\\:\\:isValidEntityCondition\\(\\) has parameter \\$entity with no type specified\\.$#"
-			count: 1
-			path: modules/social_features/social_group/modules/social_group_flexible_group/modules/social_flexible_group_book/src/Plugin/ActivityEntityCondition/BookParentOnlyActivityEntityCondition.php
