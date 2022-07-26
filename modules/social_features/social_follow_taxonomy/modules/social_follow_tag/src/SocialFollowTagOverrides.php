@@ -28,7 +28,7 @@ class SocialFollowTagOverrides implements ConfigFactoryOverrideInterface {
   /**
    * The module handler service.
    */
-  protected ModuleHandlerInterface $module_handler;
+  protected ModuleHandlerInterface $moduleHandler;
 
   /**
    * Constructs the configuration override.

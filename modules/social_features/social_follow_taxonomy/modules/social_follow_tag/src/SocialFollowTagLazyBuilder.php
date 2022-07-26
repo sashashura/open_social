@@ -194,7 +194,7 @@ class SocialFollowTagLazyBuilder implements TrustedCallbackInterface {
     ) {
       /** @var \Drupal\link\LinkItemInterface $link */
       $link = $term->get('field_term_page_url')->first();
-      $name = Link::fromTextAndUrl($name, $link->getUrl())->toRenderable();
+      $name = Link::fromTextAndUrl($name ?: '', $link->getUrl())->toRenderable();
     }
     return [
       '#theme' => 'social_tagging_popup',

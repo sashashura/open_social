@@ -236,7 +236,6 @@ function social_follow_tag_preprocess_taxonomy_term__followers_count(array &$var
   ];
 }
 
-
 /**
  * Create a notification when tags followed by a user are added to the node.
  *
@@ -371,7 +370,7 @@ function social_follow_tag_taxonomy_term_view_alter(array &$build, TermInterface
   /** @var \Drupal\flag\FlagCountManagerInterface $flag_count */
   $flag_count = \Drupal::service('flag.count');
   $follower_count = !empty($result = $flag_count->getEntityFlagCounts($term)) ?
-    (float) $result['follow_term'] : '0';
+    (float) $result['follow_term'] : 0;
   $build['follower_count'] = [
     '#type' => 'markup',
     '#markup' => number_format($follower_count),
