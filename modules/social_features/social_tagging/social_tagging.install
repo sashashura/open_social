@@ -321,6 +321,7 @@ function social_tagging_update_11402(): void {
         /** @var \Drupal\Core\Entity\Display\EntityFormDisplayInterface $view_display */
         $view_display = $display_storage->load($data['id']);
         $view_display->setComponent('field_term_page_url', $data['content']['field_term_page_url']);
+        $view_display->save();
       }
     }
   }

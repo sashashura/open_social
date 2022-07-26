@@ -20,27 +20,24 @@
   <div class="card teaser">
     <div class="teaser__body">
       <div class="teaser__content">
-        <div class="teaser__tag">{% trans %}TAG{% endtrans %}</div>
-
         <h4 class="teaser__title">
           {{ name }}
         </h4>
 
         <div class="teaser__related-content">
-          {% trans %} 1 item {% plural related_entity_count %} @count items{% endtrans %}
           {% if followers_count %}
-            |
             <span class="teaser__followers-count">
-                      {% trans %} 1 follower {% plural followers_count %} @count followers{% endtrans %}
-                      </span>
+              {% trans %} 1 follower {% plural followers_count %} @count followers{% endtrans %}
+            </span>
           {% endif %}
+          {% trans %} 1 item {% plural related_entity_count %} @count items{% endtrans %}
         </div>
 
         <div class="actions">
           {{ flag }}
           {% if(url) %}
             <a href="{{ url }}" class="btn btn-default">
-              {% trans %}See related content{% endtrans %}
+              {% trans %}Explore tag{% endtrans %}
             </a>
           {% endif %}
         </div>

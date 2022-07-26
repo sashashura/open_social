@@ -4,6 +4,7 @@ namespace Drupal\social_follow_tag;
 
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Form\FormBuilderInterface;
+use Drupal\Core\Link;
 use Drupal\Core\Render\RendererInterface;
 use Drupal\Core\Security\TrustedCallbackInterface;
 use Drupal\Core\Session\AccountInterface;
@@ -185,10 +186,20 @@ class SocialFollowTagLazyBuilder implements TrustedCallbackInterface {
   public function popupLazyBuild($url, $term_id, $field, $entity_type) {
     /** @var \Drupal\taxonomy\TermInterface $term */
     $term = $this->entityTypeManager->getStorage('taxonomy_term')->load($term_id);
+    $name = $term->label();
+
+    if (
+      $term->hasField('field_term_page_url') &&
+      !$term->get('field_term_page_url')->isEmpty()
+    ) {
+      /** @var \Drupal\link\LinkItemInterface $link */
+      $link = $term->get('field_term_page_url')->first();
+      $name = Link::fromTextAndUrl($name, $link->getUrl())->toRenderable();
+    }
     return [
       '#theme' => 'social_tagging_popup',
       '#url' => $url,
-      '#name' => $term->label(),
+      '#name' => $name,
       '#flag' => social_follow_taxonomy_flag_link($term),
       '#followers_count' => social_follow_taxonomy_term_followers_count($term),
       '#related_entity_count' => social_follow_taxonomy_related_entity_count($term, $field, $entity_type),
