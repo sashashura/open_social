@@ -273,9 +273,25 @@ function social_tagging_update_11401(): void {
 }
 
 /**
- * Add a new field to social tagging.
+ * Remove filters from the views config so that it can be added in an overrider.
  */
 function social_tagging_update_11402(): void {
+  $config = \Drupal::configFactory()->getEditable('views.view.newest_users');
+
+  if ($filters = $config->get('display.default.display_options.filters')) {
+    $filters = array_filter($filters, fn($filter) => $filter['field'] !== 'social_tagging_target_id');
+    $config->set('display.page_newest_users.display_options.filters', $filters);
+    $config->set('display.block_newest_users.display_options.filters', $filters);
+    $config->set('display.page_newest_users.display_options.defaults.filters', FALSE);
+    $config->set('display.block_newest_users.display_options.defaults.filters', FALSE);
+    $config->save(TRUE);
+  }
+}
+
+/**
+ * Add a new field to social tagging.
+ */
+function social_tagging_update_11403(): void {
   $config_path = \Drupal::service('extension.list.module')->getPath('social_tagging') . '/config/static';
   $source = new FileStorage($config_path);
   $entity_type_manager = \Drupal::entityTypeManager();
