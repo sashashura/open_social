@@ -375,6 +375,10 @@ function social_follow_tag_taxonomy_term_view_alter(array &$build, TermInterface
     '#type' => 'markup',
     '#markup' => number_format($follower_count),
   ];
+
+  if ($build['#view_mode'] === 'followers_count') {
+    $build['#cache']['tags'][] = "flagging_list:follow_term";
+  }
 }
 
 /**
