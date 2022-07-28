@@ -25,8 +25,8 @@ class SocialCoreServiceProvider extends ServiceProviderBase {
     $modules = $container->getParameter('container.modules');
     if (is_array($modules)) {
       // Check if select 2 is installed before we get the definition, otherwise
-      // you get a requested a non-existent service "select2.autocomplete_matcher
-      // on update hooks.
+      // you get a requested a non-existent service
+      // "select2.autocomplete_matcher" on update hooks.
       if (isset($modules['select2'])) {
         $definition = $container->getDefinition('select2.autocomplete_matcher');
         $definition->setClass('Drupal\social_core\Entity\Select2EntityAutocompleteMatcher');
