@@ -27,10 +27,10 @@
         <div class="teaser__related-content">
           {% if followers_count %}
             <span class="teaser__followers-count">
-              {% trans %} 1 follower {% plural followers_count %} @count followers{% endtrans %}
+              {% trans %} <b>1</b> follower {% plural followers_count %} <b>@count</b> followers{% endtrans %}
             </span>
           {% endif %}
-          {% trans %} 1 item {% plural related_entity_count %} @count items{% endtrans %}
+          {% trans %} <b>1</b> item {% plural related_entity_count %} <b>@count</b> items{% endtrans %}
         </div>
 
         <div class="actions">
