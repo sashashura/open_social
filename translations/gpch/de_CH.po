@@ -1499,8 +1499,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Open Social\n"
-"POT-Creation-Date: 2022-06-22 00:17+0000\n"
-"PO-Revision-Date: 2022-06-23 22:03+0000\n"
+"POT-Creation-Date: 2022-06-25 00:16+0000\n"
+"PO-Revision-Date: 2022-07-28 22:03+0000\n"
 "Last-Translator: Greenwire Team CH <greenwire@greenpeace.ch>\n"
 "Language-Team: German (de_CH) <https://translate.getopensocial.com/projects/"
 "gpch/distribution/de_CH/>\n"
@@ -2280,6 +2280,9 @@ msgid ""
 "a> created [social_group:created_entity_link_html] in the <a href=\"[message:"
 "gurl]\">[message:gtitle]</a> group [message:count_groups_per_node]</p>\r\n"
 msgstr ""
+"<p><a href=\"[message:author:url:absolute]\">[message:author:display-name]</"
+"a> erstellte [social_group:created_entity_link_html] in der Gruppe <a href=\""
+"[message:gurl]\">[message:gtitle]</a> [message:count_groups_per_node]</p>\n"
 
 #: modules/social_features/social_follow_taxonomy/modules/social_follow_tag/config/install/message.template.create_node_following_tag.yml:0;0
 msgid ""
@@ -2301,10 +2304,9 @@ msgid ""
 "<p>[message:cta_button]</p>\r\n"
 msgstr ""
 "<p><a href=\"[message:author:url:absolute]\">[message:author:display-name]</"
-"a> erstellte [social_taxonomy:indefinite_article] "
-"[social_taxonomy:content_type] <a href=\""
-"[message:field_message_related_object:entity:url:absolute]\">[message:node-"
-"title]</a> mit einem Tag, dem du folgst.</p>\n"
+"a> erstellte [social_taxonomy:indefinite_article] [social_taxonomy:"
+"content_type] <a href=\"[message:field_message_related_object:entity:url:"
+"absolute]\">[message:node-title]</a> mit einem Tag, dem du folgst.</p>\n"
 "\n"
 "<p>[message:preview]</p>\n"
 "\n"
@@ -2316,6 +2318,9 @@ msgid ""
 "a> created a topic in <a href=\"[message:gurl]\">[message:gtitle]</a> "
 "[message:count_groups_per_node]</p>"
 msgstr ""
+"<p><a href=\"[message:author:url:absolute]\">[message:author:display-name]</"
+"a> erstellte einen Inhalt in <a href=\"[message:gurl]\">[message:gtitle]</a> "
+"[message:count_groups_per_node]</p>"
 
 #: modules/social_features/social_activity/config/install/message.template.create_topic_gc.yml:0
 msgid ""
@@ -2340,6 +2345,9 @@ msgid ""
 "a> created an event in <a href=\"[message:gurl]\">[message:gtitle]</a> "
 "[message:count_groups_per_node]</p>"
 msgstr ""
+"<p><a href=\"[message:author:url:absolute]\">[message:author:display-name]</"
+"a> eine Veranstaltung in <a href=\"[message:gurl]\">[message:gtitle]</a> "
+"[message:count_groups_per_node]</p>"
 
 #: modules/social_features/social_activity/config/install/message.template.create_event_gc.yml:0
 msgid ""
@@ -2400,10 +2408,9 @@ msgid ""
 "<p>[message:cta_button]</p>\r\n"
 msgstr ""
 "<p><a href=\"[message:author:url:absolute]\">[message:author:display-name]</"
-"a> hat dich in einem <a href=\""
-"[message:field_message_related_object:entity:url:absolute]\""
-">Kommentar</a>&nbsp;erwähnt (bei "
-"[social_mentions:commented_entity_link_html]).</p>\n"
+"a> hat dich in einem <a href=\"[message:field_message_related_object:entity:"
+"url:absolute]\">Kommentar</a>&nbsp;erwähnt (bei [social_mentions:"
+"commented_entity_link_html]).</p>\n"
 "\n"
 "<p>[message:preview]</p>\n"
 "\n"
@@ -2511,8 +2518,8 @@ msgid ""
 "<p>[message:cta_button]</p>\r\n"
 msgstr ""
 "<p><a href=\"[message:author:url:absolute]\">[message:author:display-name]</"
-"a> hat eine/n [social_group:content_type] in der Gruppe <a href=\"[message:"
-"gurl]\">[message:gtitle]</a> erstellt [message:count_groups_per_node] </p>\n"
+"a> hat [social_group:content_type] in der Gruppe <a href=\"[message:gurl]\""
+">[message:gtitle]</a> erstellt [message:count_groups_per_node] </p>\n"
 "\n"
 "<p>[message:preview]</p>\n"
 "\n"
@@ -2648,9 +2655,9 @@ msgid ""
 "display-name]</a> joined the <a href=\"[message:gurl]\">[message:gtitle]</a> "
 "group</p>\r\n"
 msgstr ""
-"<p><a href=\"[message:recipient-user:url:absolute]\">[message:recipient-user:"
-"display-name]</a> ist der Gruppe<a href=\"[message:gurl]\">[message:gtitle]</"
-"a> begetreten</p>\n"
+"<p><a href=\"[message:recipient-user:url:absolute]\">[message:recipient-user"
+":display-name]</a> ist der Gruppe <a href=\"[message:gurl]\""
+">[message:gtitle]</a> beigetreten</p>\n"
 
 #: modules/social_features/social_activity/config/install/message.template.join_to_group.yml:0
 msgid ""
@@ -2932,9 +2939,9 @@ msgid ""
 "href=\"[message:author:url:absolute]\">[message:author:display-name]</a></p>"
 "\r\n"
 msgstr ""
-"<p>Du hast eine <a href=\"[message:pmt-url]\">Nachricht</a> von <a href="
-"\"[message:author:url:absolute]\">[message:author:display- Name]</"
-"a>erhalten</p>\n"
+"<p>Du hast eine <a href=\"[message:pmt-url]\">Nachricht</a> von <a href=\""
+"[message:author:url:absolute]\">[message:author:display-name]</a> "
+"erhalten</p>\n"
 
 #: modules/social_features/social_private_message/config/install/message.template.create_private_message.yml:0
 msgid ""
@@ -2946,9 +2953,9 @@ msgid ""
 "\r\n"
 "<p>[message:cta_button]</p>\r\n"
 msgstr ""
-"<p>Du hast eine <a href=\"[message:pmt-url]\">Nachricht</a> von <a href="
-"\"[message:author:url:absolute]\">[message:author:display- Name]</"
-"a>erhalten</p>\n"
+"<p>Du hast eine <a href=\"[message:pmt-url]\">Nachricht</a> von <a href=\""
+"[message:author:url:absolute]\">[message:author:display-name]</a> "
+"erhalten</p>\n"
 "\n"
 "<p>[message:preview]</p>\n"
 "\n"
@@ -3592,7 +3599,7 @@ msgstr "Kontoinformation"
 
 #: modules/social_features/social_core/social_core.links.menu.yml:0
 msgid "Account settings"
-msgstr ""
+msgstr "Kontoeinstellungen"
 
 #: modules/social_features/social_user/src/Plugin/GraphQL/DataProducer/AccountId.php:8
 msgid "AccountInterface instance"
@@ -4541,6 +4548,10 @@ msgstr ""
 
 #: modules/social_features/social_album/config/install/field.field.node.album.field_album_creators.yml:0
 msgid "Allow members of the same group to add images to this album"
+msgstr ""
+
+#: modules/social_features/social_follow_user/social_follow_user.module:235
+msgid "Allow members to follow me"
 msgstr ""
 
 #: modules/social_features/social_group/modules/social_group_invite/config/optional/field.field.group.flexible_group.field_group_invite_by_member.yml:0
@@ -6040,7 +6051,7 @@ msgstr ""
 
 #: modules/social_features/social_landing_page/src/Plugin/Field/FieldWidget/BlockFieldWidget.php:43
 msgid "Complete community activity stream"
-msgstr "Vervollständige Community Aktivitätsverlauf"
+msgstr "Vollständiger Community Aktivitätsverlauf"
 
 #: modules/social_features/social_landing_page/src/Plugin/Field/FieldWidget/BlockFieldWidget.php:44
 msgid "Complete community activity stream (with post form)"
@@ -8689,7 +8700,7 @@ msgstr ""
 msgid "Follow user settings"
 msgstr ""
 
-#: modules/social_features/social_follow_user/social_follow_user.module:25
+#: modules/social_features/social_follow_user/social_follow_user.module:28
 #: modules/social_features/social_follow_user/social_follow_user.links.task.yml:0
 #: modules/social_features/social_follow_taxonomy/config/install/views.view.following_tags.yml:0
 msgid "Followers"
@@ -8716,7 +8727,7 @@ msgstr ""
 msgid "Following taxonomy activity context"
 msgstr ""
 
-#: modules/social_features/social_follow_user/social_follow_user.module:31
+#: modules/social_features/social_follow_user/social_follow_user.module:34
 msgid "Following users"
 msgstr ""
 
@@ -9359,7 +9370,7 @@ msgstr ""
 
 #: modules/social_features/social_swiftmail/social_swiftmail.module:122
 msgid "Hi <strong>@display_name</strong>"
-msgstr "Hi <strong>@display_name</strong>"
+msgstr "Hallo <strong>@display_name</strong>"
 
 #: modules/social_features/social_group/modules/social_group_invite/config/optional/group.content_type.closed_group-group_invitation.yml:0
 #: modules/social_features/social_group/modules/social_group_invite/config/optional/group.content_type.flexible_group-group_invitation.yml:0
@@ -9425,7 +9436,7 @@ msgstr ""
 "\t</tbody>\n"
 "</table>"
 
-#: modules/social_features/social_profile/modules/social_profile_privacy/social_profile_privacy.module:267
+#: modules/social_features/social_profile/modules/social_profile_privacy/social_profile_privacy.module:270
 msgid "Hide"
 msgstr ""
 
@@ -9923,7 +9934,7 @@ msgstr "JavaScript"
 
 #: modules/social_features/social_group/src/Plugin/Join/SocialGroupDirectJoin.php:39
 msgid "Join"
-msgstr ""
+msgstr "Beitreten"
 
 #: modules/custom/group_core_comments/src/Plugin/Field/FieldFormatter/CommentGroupContentFormatter.php:179
 msgid "Join group"
@@ -9947,7 +9958,7 @@ msgstr "Der Gruppe beitreten"
 #: modules/social_features/social_group/src/Plugin/Join/SocialGroupAlreadyJoin.php:28
 msgctxt "Is a member"
 msgid "Joined"
-msgstr ""
+msgstr "Beigetreten"
 
 #: modules/social_features/social_group/config/install/views.view.group_manage_members.yml:0
 msgid "Joined date"
@@ -10917,7 +10928,7 @@ msgstr "Navigationseinstellungen"
 
 #: modules/custom/activity_send/modules/activity_send_email/src/Plugin/EmailFrequency/None.php:10
 msgid "Never"
-msgstr ""
+msgstr "Nie"
 
 #: modules/social_features/social_album/social_album.module:80
 msgid "New Album"
@@ -13647,7 +13658,7 @@ msgstr ""
 
 #: modules/social_features/social_group/modules/social_group_secret/social_group_secret.installer_options.yml:0
 msgid "Secret groups"
-msgstr ""
+msgstr "Unsichtbare Gruppen"
 
 #: modules/social_features/social_landing_page/config/install/core.entity_form_display.node.landing_page.default.yml:0
 #: modules/social_features/social_landing_page/config/install/core.entity_form_display.paragraph.section.default.yml:0
@@ -14148,7 +14159,7 @@ msgstr ""
 msgid "Sharing Options"
 msgstr ""
 
-#: modules/social_features/social_profile/modules/social_profile_privacy/social_profile_privacy.module:266
+#: modules/social_features/social_profile/modules/social_profile_privacy/social_profile_privacy.module:269
 msgid "Show"
 msgstr ""
 
@@ -15458,7 +15469,7 @@ msgstr ""
 #: modules/social_features/social_group/config/install/core.entity_view_mode.group_content.teaser.yml:0
 #: modules/social_features/social_profile/config/install/core.entity_view_mode.profile.teaser.yml:0
 msgid "Teaser"
-msgstr ""
+msgstr "Teaser"
 
 #: modules/social_features/social_core/config/install/crop.type.teaser.yml:0
 msgid "Teaser image in overviews"
@@ -15973,11 +15984,11 @@ msgid ""
 "radio buttons to dropdown."
 msgstr ""
 
-#: modules/social_features/social_follow_user/social_follow_user.module:32
+#: modules/social_features/social_follow_user/social_follow_user.module:35
 msgid "The number of users that user following."
 msgstr ""
 
-#: modules/social_features/social_follow_user/social_follow_user.module:26
+#: modules/social_features/social_follow_user/social_follow_user.module:29
 msgid "The number of users who are followed."
 msgstr ""
 
@@ -16429,6 +16440,14 @@ msgstr ""
 #: modules/social_features/social_group/social_group.permissions.yml:0
 msgid "This permission grants full access to all groups."
 msgstr "Diese Berechtigung gewährt vollen Zugriff auf alle Gruppen."
+
+#: modules/social_features/social_follow_user/social_follow_user.module:237
+msgid ""
+"This selection allows you to turn on the ability for \n"
+"members to follow your activity and receive notifications about new content "
+"you\n"
+"create."
+msgstr ""
 
 #: modules/social_features/social_profile/social_profile.module:654
 msgid ""

@@ -3166,16 +3166,6 @@ parameters:
 			path: modules/custom/social_lazy_loading/social_lazy_loading.install
 
 		-
-			message: "#^Function social_lazy_loading_preprocess_node\\(\\) has no return type specified\\.$#"
-			count: 1
-			path: modules/custom/social_lazy_loading/social_lazy_loading.module
-
-		-
-			message: "#^Function social_lazy_loading_preprocess_node\\(\\) has parameter \\$variables with no type specified\\.$#"
-			count: 1
-			path: modules/custom/social_lazy_loading/social_lazy_loading.module
-
-		-
 			message: "#^Method Drupal\\\\social_lazy_loading_images\\\\SocialLazyLoadingImageDisplayOverride\\:\\:createConfigObject\\(\\) should return Drupal\\\\Core\\\\Config\\\\StorableConfigBase but returns null\\.$#"
 			count: 1
 			path: modules/custom/social_lazy_loading/social_lazy_loading_images/src/SocialLazyLoadingImageDisplayOverride.php
@@ -3992,11 +3982,6 @@ parameters:
 
 		-
 			message: "#^Argument of an invalid type array\\|int supplied for foreach, only iterables are supported\\.$#"
-			count: 1
-			path: modules/social_features/social_album/social_album.install
-
-		-
-			message: "#^Function _social_album_blocks\\(\\) has no return type specified\\.$#"
 			count: 1
 			path: modules/social_features/social_album/social_album.install
 
@@ -5902,7 +5887,7 @@ parameters:
 
 		-
 			message: "#^Call to an undefined method Drupal\\\\Core\\\\Form\\\\FormInterface\\:\\:getEntity\\(\\)\\.$#"
-			count: 5
+			count: 3
 			path: modules/social_features/social_core/social_core.module
 
 		-
@@ -6007,21 +5992,6 @@ parameters:
 
 		-
 			message: "#^Function social_core_form_menu_edit_form_alter\\(\\) has no return type specified\\.$#"
-			count: 1
-			path: modules/social_features/social_core/social_core.module
-
-		-
-			message: "#^Function social_core_form_node_form_alter\\(\\) has no return type specified\\.$#"
-			count: 1
-			path: modules/social_features/social_core/social_core.module
-
-		-
-			message: "#^Function social_core_form_node_form_alter\\(\\) has parameter \\$form with no type specified\\.$#"
-			count: 1
-			path: modules/social_features/social_core/social_core.module
-
-		-
-			message: "#^Function social_core_form_node_form_alter\\(\\) has parameter \\$form_id with no type specified\\.$#"
 			count: 1
 			path: modules/social_features/social_core/social_core.module
 
@@ -6181,11 +6151,6 @@ parameters:
 			path: modules/social_features/social_core/social_core.module
 
 		-
-			message: "#^Interface Drupal\\\\node\\\\NodeInterface referenced with incorrect case\\: Drupal\\\\Node\\\\NodeInterface\\.$#"
-			count: 1
-			path: modules/social_features/social_core/social_core.module
-
-		-
 			message: "#^Parameter \\#1 \\$field_name of method Drupal\\\\Core\\\\Entity\\\\FieldableEntityInterface\\:\\:hasField\\(\\) expects string, int\\|string\\|null given\\.$#"
 			count: 1
 			path: modules/social_features/social_core/social_core.module
@@ -6234,41 +6199,6 @@ parameters:
 			message: "#^\\\\Drupal calls should be avoided in classes, use dependency injection instead$#"
 			count: 1
 			path: modules/social_features/social_core/src/ContentTranslationConfigOverrideBase.php
-
-		-
-			message: "#^Method Drupal\\\\social_core\\\\Controller\\\\SocialCoreController\\:\\:accessDenied\\(\\) has no return type specified\\.$#"
-			count: 1
-			path: modules/social_features/social_core/src/Controller/SocialCoreController.php
-
-		-
-			message: "#^Method Drupal\\\\social_core\\\\Controller\\\\SocialCoreController\\:\\:create\\(\\) has no return type specified\\.$#"
-			count: 1
-			path: modules/social_features/social_core/src/Controller/SocialCoreController.php
-
-		-
-			message: "#^Method Drupal\\\\social_core\\\\Controller\\\\SocialCoreController\\:\\:stream\\(\\) has no return type specified\\.$#"
-			count: 1
-			path: modules/social_features/social_core/src/Controller/SocialCoreController.php
-
-		-
-			message: "#^Method Drupal\\\\social_core\\\\Controller\\\\SocialCoreController\\:\\:updateSelection\\(\\) has no return type specified\\.$#"
-			count: 1
-			path: modules/social_features/social_core/src/Controller/SocialCoreController.php
-
-		-
-			message: "#^Parameter \\#1 \\$key of function array_key_exists expects int\\|string, int\\|string\\|null given\\.$#"
-			count: 1
-			path: modules/social_features/social_core/src/Controller/SocialCoreController.php
-
-		-
-			message: "#^Parameter \\#1 \\$route_name of method Drupal\\\\Core\\\\Controller\\\\ControllerBase\\:\\:redirect\\(\\) expects string, array\\|string given\\.$#"
-			count: 1
-			path: modules/social_features/social_core/src/Controller/SocialCoreController.php
-
-		-
-			message: "#^\\\\Drupal calls should be avoided in classes, use dependency injection instead$#"
-			count: 2
-			path: modules/social_features/social_core/src/Controller/SocialCoreController.php
 
 		-
 			message: "#^Method Drupal\\\\social_core\\\\Entity\\\\Element\\\\EntityAutocomplete\\:\\:getEntityLabels\\(\\) has parameter \\$hide_id with no type specified\\.$#"
@@ -11935,41 +11865,6 @@ parameters:
 			path: modules/social_features/social_group/src/Controller/GroupManagersController.php
 
 		-
-			message: "#^Call to an undefined method object\\:\\:label\\(\\)\\.$#"
-			count: 1
-			path: modules/social_features/social_group/src/Controller/SocialGroupController.php
-
-		-
-			message: "#^Cannot call method get\\(\\) on Symfony\\\\Component\\\\HttpFoundation\\\\Request\\|null\\.$#"
-			count: 1
-			path: modules/social_features/social_group/src/Controller/SocialGroupController.php
-
-		-
-			message: "#^Cannot call method label\\(\\) on Drupal\\\\group\\\\Entity\\\\Group\\|null\\.$#"
-			count: 1
-			path: modules/social_features/social_group/src/Controller/SocialGroupController.php
-
-		-
-			message: "#^Method Drupal\\\\social_group\\\\Controller\\\\SocialGroupController\\:\\:create\\(\\) has no return type specified\\.$#"
-			count: 1
-			path: modules/social_features/social_group/src/Controller/SocialGroupController.php
-
-		-
-			message: "#^Method Drupal\\\\social_group\\\\Controller\\\\SocialGroupController\\:\\:groupRemoveContentTitle\\(\\) has parameter \\$group with no type specified\\.$#"
-			count: 1
-			path: modules/social_features/social_group/src/Controller/SocialGroupController.php
-
-		-
-			message: "#^Method Drupal\\\\social_group\\\\Controller\\\\SocialGroupController\\:\\:otherGroupPage\\(\\) has parameter \\$group with no type specified\\.$#"
-			count: 1
-			path: modules/social_features/social_group/src/Controller/SocialGroupController.php
-
-		-
-			message: "#^\\\\Drupal calls should be avoided in classes, use dependency injection instead$#"
-			count: 5
-			path: modules/social_features/social_group/src/Controller/SocialGroupController.php
-
-		-
 			message: "#^Method Drupal\\\\social_group\\\\Controller\\\\SocialGroupListBuilder\\:\\:getEntityIds\\(\\) should return array but returns array\\|int\\.$#"
 			count: 1
 			path: modules/social_features/social_group/src/Controller/SocialGroupListBuilder.php
@@ -16025,6 +15920,16 @@ parameters:
 			path: modules/social_features/social_profile/tests/src/Kernel/GraphQLUsersEndpointTest.php
 
 		-
+		  message: "#^Method Drupal\\\\social_profile\\\\Plugin\\\\views\\\\filter\\\\SocialSplitProfileTerms\\:\\:valueForm\\(\\) has parameter \\$form with no type specified\\.$#"
+		  count: 1
+		  path: modules/social_features/social_profile/src/Plugin/views/filter/SocialSplitProfileTerms.php
+
+		-
+		  message: "#^Method Drupal\\\\social_profile\\\\Plugin\\\\views\\\\filter\\\\SocialSplitProfileTerms\\:\\:validateExposed\\(\\) has parameter \\$form with no type specified\\.$#"
+		  count: 1
+		  path: modules/social_features/social_profile/src/Plugin/views/filter/SocialSplitProfileTerms.php
+
+		-
 			message: "#^Parameter \\#1 \\$user of method Drupal\\\\Tests\\\\social_profile\\\\Kernel\\\\GraphQLUsersEndpointTest\\:\\:ensureTestProfile\\(\\) expects Drupal\\\\Core\\\\Session\\\\AccountInterface, Drupal\\\\user\\\\Entity\\\\User\\|false given\\.$#"
 			count: 1
 			path: modules/social_features/social_profile/tests/src/Kernel/GraphQLUsersEndpointTest.php
@@ -17719,3 +17624,7 @@ parameters:
 			count: 2
 			path: modules/social_features/social_user_export/src/Plugin/Action/ExportUser.php
 
+		-
+			message: "#^Method Drupal\\\\social_flexible_group_book\\\\Plugin\\\\ActivityEntityCondition\\\\BookParentOnlyActivityEntityCondition\\:\\:isValidEntityCondition\\(\\) has parameter \\$entity with no type specified\\.$#"
+			count: 1
+			path: modules/social_features/social_group/modules/social_group_flexible_group/modules/social_flexible_group_book/src/Plugin/ActivityEntityCondition/BookParentOnlyActivityEntityCondition.php
