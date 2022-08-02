@@ -391,7 +391,7 @@ function social_follow_tag_theme_suggestions_taxonomy_term_alter(array &$suggest
 /**
  * Implements hook_ENTITY_TYPE_build_defaults_alter().
  */
-function social_follow_tag_block_content_build_defaults_build_defaults_alter(array &$build, BlockContentInterface $block_content): void {
+function social_follow_tag_block_content_build_defaults_alter(array &$build, BlockContentInterface $block_content): void {
   if (
     $block_content->bundle() !== 'most_followed_tags' ||
     !$block_content->hasField('field_terms') ||
