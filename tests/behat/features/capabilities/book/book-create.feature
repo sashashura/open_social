@@ -7,6 +7,9 @@ Feature: Create Book page
   Scenario: Successfully create Book page
     Given I am logged in as an "administrator"
     And I am on "node/add/book"
+    # "Book Page" should be created only as a book not as a regular node.
+    And I should not see "- None -" in the "#edit-book-bid" element
+    And I should see "- Create a new book -" in the "#edit-book-bid" element
     When I fill in the following:
       | Title | This is my first novel |
     And I fill in the "edit-body-0-value" WYSIWYG editor with "This is a book all about me. An autobiography so to speak!"
