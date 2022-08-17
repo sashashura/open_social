@@ -30,7 +30,6 @@ jobs:
         with:
           repository: 'goalgorilla/drupal_social'
           ref: 'feature/drupal-9-4'
-
       # Install the version of Open Social under test.
       - name: Composer require current branch
         run: composer require goalgorilla/open_social:dev-$BRANCH_NAME
@@ -46,4 +45,4 @@ jobs:
         run: docker exec -i social_ci_web bash /var/www/scripts/social/install/install_script.sh --localsettings
 
       - name: Run Integration tests
-        run: docker exec -i social_ci_behat bash /var/www/scripts/social/behatstability.sh "stability-1&&~DS-1136&&~DS-3605 --stop-on-failure --strict  --colors"
+        run: docker exec -i social_ci_web bash /var/www/scripts/social/behatstability.sh "stability-1&&~DS-1136&&~DS-3605 --stop-on-failure --strict  --colors"
