@@ -22,7 +22,7 @@
     },
     "require": {},
     "require-dev": {
-        "goalgorilla/open_social_dev": "dev-dependabot/composer/drupal/core-dev-approx-9.4.3"
+        "goalgorilla/open_social_dev": "dev-dependabot/composer/drupal/core-dev-approx-9.4.5"
     },
     "repositories": [
         {
