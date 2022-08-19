@@ -11,6 +11,9 @@ use Drupal\Core\Extension\ModuleHandlerInterface;
 use Drupal\Core\Form\ConfigFormBase;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Link;
+use Drupal\social_tagging\SocialTaggingService;
+use Drupal\taxonomy\Entity\Term;
+use Drupal\taxonomy\TermInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
@@ -49,6 +52,13 @@ class SocialTaggingSettingsForm extends ConfigFormBase implements ContainerInjec
   protected $cacheTagsInvalidator;
 
   /**
+   * The social tagging service.
+   *
+   * @var \Drupal\social_tagging\SocialTaggingService
+   */
+  protected $tagService;
+
+  /**
    * {@inheritdoc}
    */
   public function __construct(
@@ -56,13 +66,15 @@ class SocialTaggingSettingsForm extends ConfigFormBase implements ContainerInjec
     ModuleHandlerInterface $module_handler,
     EntityTypeManagerInterface $entity_type_manager,
     Connection $database,
-    CacheTagsInvalidatorInterface $cache_tags_invalidator
+    CacheTagsInvalidatorInterface $cache_tags_invalidator,
+    SocialTaggingService $tagging_service
   ) {
     parent::__construct($config_factory);
     $this->moduleHandler = $module_handler;
     $this->entityTypeManager = $entity_type_manager;
     $this->database = $database;
     $this->cacheTagsInvalidator = $cache_tags_invalidator;
+    $this->tagService = $tagging_service;
   }
 
   /**
@@ -74,7 +86,8 @@ class SocialTaggingSettingsForm extends ConfigFormBase implements ContainerInjec
       $container->get('module_handler'),
       $container->get('entity_type.manager'),
       $container->get('database'),
-      $container->get('cache_tags.invalidator')
+      $container->get('cache_tags.invalidator'),
+      $container->get('social_tagging.tag_service')
     );
   }
 
@@ -145,6 +158,9 @@ class SocialTaggingSettingsForm extends ConfigFormBase implements ContainerInjec
       '#description' => $this->t("When filtering with multiple terms use AND condition in the query."),
     ];
 
+    // Add "Categories ordering" form element.
+    $this->buildCategoriesOrderElement($form, $form_state);
+
     $form['node_type_settings'] = [
       '#type' => 'fieldset',
       '#title' => $this->t('Type configuration'),
@@ -202,6 +218,10 @@ class SocialTaggingSettingsForm extends ConfigFormBase implements ContainerInjec
 
   /**
    * {@inheritdoc}
+   *
+   * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
+   * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
+   * @throws \Drupal\Core\Entity\EntityStorageException
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
     // Get the configuration file.
@@ -217,6 +237,17 @@ class SocialTaggingSettingsForm extends ConfigFormBase implements ContainerInjec
     }
     else {
       $config->clear('use_category_parent')->save();
+    }
+
+    foreach ($form_state->getValue('categories_order') as $tid => $categories_order_values) {
+      $term = Term::load($tid);
+      if ($term instanceof TermInterface) {
+        // Update weight only if it was changed.
+        if ($term->getWeight() !== $categories_order_values['weight']) {
+          $term->setWeight($categories_order_values['weight']);
+          $term->save();
+        }
+      }
     }
 
     // Clear cache tags of profiles.
@@ -244,6 +275,78 @@ class SocialTaggingSettingsForm extends ConfigFormBase implements ContainerInjec
     }
 
     parent::submitForm($form, $form_state);
+  }
+
+  /**
+   * Add "Categories ordering" element to form.
+   *
+   * @param array $form
+   *   Form build array.
+   * @param \Drupal\Core\Form\FormStateInterface $form_state
+   *   Form state object.
+   */
+  private function buildCategoriesOrderElement(array &$form, FormStateInterface $form_state): void {
+    $input = $form_state->getUserInput();
+
+    $form['categories_order_wrapper'] = [
+      '#type' => 'details',
+      '#title' => $this->t('Categories ordering'),
+      '#description' => $this->t('Drag-and-drop to change the order'),
+      '#collapsible' => TRUE,
+      '#collapsed' => TRUE,
+    ];
+
+    $wrapper =& $form['categories_order_wrapper'];
+
+    $wrapper['categories_order'] = [
+      '#type' => 'table',
+      '#header' => [
+        $this->t('Category'),
+        $this->t('Weight'),
+      ],
+      '#tabledrag' => [
+        [
+          'action' => 'order',
+          'relationship' => 'sibling',
+          'group' => 'categories-order-weight',
+        ],
+      ],
+      '#attributes' => [
+        'id' => 'categories-terms',
+      ],
+      '#empty' => $this->t('There are currently no terms in the vocabulary.'),
+    ];
+
+    $categories = $this->tagService->getCategories();
+
+    foreach ($categories as $tid => $label) {
+      $term = Term::load($tid);
+
+      if (!$term instanceof TermInterface) {
+        continue;
+      }
+
+      $wrapper['categories_order'][$tid]['#attributes']['class'][] = 'draggable';
+      $wrapper['categories_order'][$tid]['#weight'] = $input['categories_order'][$tid]['weight'] ?? NULL;
+      $wrapper['categories_order'][$tid]['effect'] = [
+        '#tree' => FALSE,
+        'data' => [
+          'label' => [
+            '#plain_text' => $label,
+          ],
+        ],
+      ];
+
+      $wrapper['categories_order'][$tid]['weight'] = [
+        '#type' => 'weight',
+        '#title' => $this->t('Weight for @title', ['@title' => $label]),
+        '#title_display' => 'invisible',
+        '#default_value' => $term->getWeight(),
+        '#attributes' => [
+          'class' => ['categories-order-weight'],
+        ],
+      ];
+    }
   }
 
 }
