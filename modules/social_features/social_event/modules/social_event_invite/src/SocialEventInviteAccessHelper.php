@@ -96,8 +96,18 @@ class SocialEventInviteAccessHelper {
     }
 
     // Get the group of this node.
-    $node = $this->routeMatch->getRawParameter('node');
-    $node = Node::load($node);
+    $node = $this->routeMatch->getParameter('node');
+    if (!$node instanceof NodeInterface) {
+      // On views url parameters node can be provided as raw parameter.
+      $nid = $this->routeMatch->getRawParameter('node');
+      // Node can't be loaded.
+      if (empty($nid)) {
+        return AccessResult::neutral();
+      }
+
+      $node = Node::load($nid);
+    }
+
     if ($node instanceof NodeInterface) {
       $node = $node->id();
     }
