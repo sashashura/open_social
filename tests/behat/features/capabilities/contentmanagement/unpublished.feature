@@ -24,6 +24,7 @@ Feature: Un/publish a node
 
     When I click "Edit content"
       And I click the element with css selector "#edit-group-settings .card__title"
+      And I wait for "3" seconds
       Then I should see "Publish status"
       And I should see "Published"
       And I show hidden checkboxes
