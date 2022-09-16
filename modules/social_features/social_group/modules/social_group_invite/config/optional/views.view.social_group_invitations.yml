@@ -201,7 +201,11 @@ display:
               action_id: social_group_invite_resend_action
               preconfiguration:
                 label_override: 'Send reminders'
-            3:
+            2:
+              action_id: social_group_invite_resend_action_non_members
+              preconfiguration:
+                label_override: 'Send reminders to NON-members'
+            5:
               action_id: social_group_delete_group_content_action
               preconfiguration:
                 label_override: 'Remove invites'
